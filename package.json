@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "add": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-fontawesome": "^1.7.1",
     "react-particles": "^2.9.3",
-    "tsparticles": "^2.9.3"
+    "tsparticles": "^2.9.3",
+    "yarn": "^1.22.21"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

@@ -3,3 +3,4 @@ export * from "./skills";
 export * from "./particles";
 export * from "./about";
 export * from "./testimonial";
+export * from "./skillCard";
