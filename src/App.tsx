@@ -3,7 +3,6 @@ import {
   AboutSection,
   Background,
   ProjectsSection,
-  SkillCard,
   SkillsList,
   TestimonialsSection,
 } from "./comp";
@@ -28,7 +27,6 @@ function App() {
         <ProjectsSection projects={projects} />
         <h2 className="testimonials-heading">Testimonials</h2>
         <TestimonialsSection testimonials={testimonials} />
-        <SkillCard />
       </div>
     </div>
   );

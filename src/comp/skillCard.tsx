@@ -1,14 +1,20 @@
 import "./skillCard.css";
 import React, { useEffect, useRef } from "react";
-import FA from "react-fontawesome";
-import { SkillProgress } from "./skillProgress";
 
-export const SkillCard = () => {
+interface SkillCardProps {
+  title: string;
+  icon: React.ReactNode;
+  exp: number;
+  desc: string;
+  onClose: () => void;
+}
+
+export const SkillCard = ({ title, icon, exp, desc, onClose }: SkillCardProps) => {
   const modalRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const backgroundRefs = useRef<Array<HTMLDivElement | null>>([]);
 
-  const numDivs = 20; // Number of background divs
+  const numDivs = 20;
 
   // Random factors for individual div paths, initial positions, and sizes
   const randomFactors = useRef(
@@ -91,23 +97,24 @@ export const SkillCard = () => {
           >
           </div>
         ))}
-        <div className="modal-card" ref={modalRef}>
-          <div
-            style={{
-              background: "black",
-              width: 56,
-              height: 56,
-              borderRadius: "50%",
-            }}
+        <div
+          className="modal-card"
+          ref={modalRef}
+        >
+          <button
+            className="close-button"
+            onClick={onClose}
           >
+            &times;
+          </button>
+          <div className="profile-icon">{icon}</div>
+          <h2 className="title">{title}</h2>
+          <div className="experience-badge">
+            <span style={{ marginRight: "5px" }}>⭐</span>
+            {exp}+ Yrs Exp
           </div>
-          <h2 style={{ margin: 0 }}>React JS</h2>
-          <p>
-            <strong>4+</strong> Years of experience
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint
-            cillum sint consectetur cupidatat.
+          <p className="description">
+            {desc}
           </p>
         </div>
       </div>
