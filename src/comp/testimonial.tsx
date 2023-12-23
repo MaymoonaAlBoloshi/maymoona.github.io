@@ -1,5 +1,5 @@
-import React from 'react';
-import './testimonial.css';
+import React from "react";
+import "./testimonial.css";
 
 interface Testimonial {
   text: string;
@@ -10,7 +10,9 @@ interface TestimonialsSectionProps {
   testimonials: Testimonial[];
 }
 
-const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials }) => {
+export const TestimonialsSection: React.FC<TestimonialsSectionProps> = (
+  { testimonials },
+) => {
   return (
     <div className="testimonials-container">
       {testimonials.map((testimonial, index) => (
@@ -22,6 +24,3 @@ const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ testimonials 
     </div>
   );
 };
-
-export default TestimonialsSection;
-

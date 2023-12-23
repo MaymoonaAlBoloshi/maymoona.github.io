@@ -11,7 +11,7 @@ interface ProjectsSectionProps {
   projects: Project[];
 }
 
-const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
+export const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   return (
     <div className="projects-container">
       {projects.map((project, index) => (
@@ -27,4 +27,3 @@ const ProjectsSection: React.FC<ProjectsSectionProps> = ({ projects }) => {
   );
 };
 
-export default ProjectsSection;

@@ -7,7 +7,7 @@ interface AboutSectionProps {
   description: string;
 }
 
-const AboutSection: React.FC<AboutSectionProps> = ({ imageUrl, heading, description }) => {
+export const AboutSection: React.FC<AboutSectionProps> = ({ imageUrl, heading, description }) => {
   return (
     <div className="about">
       <div className="image-container">
@@ -21,5 +21,4 @@ const AboutSection: React.FC<AboutSectionProps> = ({ imageUrl, heading, descript
   );
 };
 
-export default AboutSection;
 

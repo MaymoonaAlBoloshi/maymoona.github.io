@@ -1,51 +1,32 @@
 import "./App.css";
+import {
+  AboutSection,
+  Background,
+  ProjectsSection,
+  SkillsList,
+  TestimonialsSection,
+} from "./comp";
 
-import Particles from "./comp/particles";
-import Skills from "./comp/skills";
-import About from "./comp/about";
-import Projects from "./comp/projects";
-import Testimonials from "./comp/testimonial";
-
-import { skills } from "./comp/data/skills";
-import { projects } from "./comp/data/projects";
-import { testimonials } from "./comp/data/testimonials";
+import { projects, skills, testimonials } from "./data";
 
 function App() {
   return (
     <div>
-      <div
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-          opacity: 0.5,
-        }}
-      >
-        <Particles />
+      <div className="background-style">
+        <Background />
       </div>
-      <div
-        style={{
-          padding: "20px",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <About
+      <div className="main-container">
+        <AboutSection
           imageUrl="https://avatars.githubusercontent.com/u/43531753?v=4"
           heading="About Me"
-          description="I am a software engineer with a passion for building web and mobile applications. I have experience working with JavaScript, TypeScript, React, React Native, Node.js, Express, MongoDB, and Git. I am a quick learner and enjoy working with others to build great products."
+          description="I am a software engineer..."
         />
         <h2 className="skills-heading">Skills</h2>
-        <Skills skills={skills} />
+        <SkillsList skills={skills} />
         <h2 className="projects-heading">Projects</h2>
-        <Projects projects={projects} />
+        <ProjectsSection projects={projects} />
         <h2 className="testimonials-heading">Testimonials</h2>
-        <Testimonials testimonials={testimonials} />
+        <TestimonialsSection testimonials={testimonials} />
       </div>
     </div>
   );
